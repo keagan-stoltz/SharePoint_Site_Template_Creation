@@ -1,0 +1,1522 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/sp/site-design-script-actions.schema.json",
+  "actions": [
+    {
+      "verb": "createSPList",
+      "listName": "[[LBrown_Brown_External0001_listName]]",
+      "templateType": 101,
+      "color": "[[LBrown_Brown_External0001_color]]",
+      "icon": "[[LBrown_Brown_External0001_icon]]",
+      "addNavLink": "[[LBrown_Brown_External0001_addNavLink]]",
+      "description": "[[LBrown_Brown_External0001_description]]",
+      "identity": "LBrown_Brown_External0001",
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{08d89a66-4634-42b8-9d5a-0c27395a48b3}\" Type=\"Text\" Name=\"TriggerFlowInfo\" DisplayName=\"Trigger Flow Info\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnlyEnforced=\"FALSE\" ReadOnly=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"TriggerFlowInfo\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field DisplayName=\"SYSTEM Notes:\" Format=\"Dropdown\" IsModern=\"TRUE\" MaxLength=\"255\" Name=\"SYSTEMNotes_x003a_\" Title=\"SYSTEM Notes:\" Type=\"Text\" ID=\"{03bca5e8-263a-499c-8f6c-a829f2f951f4}\" StaticName=\"SYSTEMNotes_x003a_\"><Default>The file should not be moved or shared from this location.</Default></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{321bc046-2178-49bd-893f-7aa4fd61d04e}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"PolicyDisabledUICapabilities\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Actions Disabled by Policy\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PolicyDisabledUICapabilities\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern /></Field>"
+        },
+        {
+          "verb": "addContentType",
+          "name": "Folder",
+          "id": "0x0120"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Documents",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Modified",
+            "_ExtendedDescription",
+            "Editor"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true,
+          "replaceViewFields": true
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "[[LDocuments0002_listName]]",
+      "templateType": 101,
+      "color": "[[LDocuments0002_color]]",
+      "icon": "[[LDocuments0002_icon]]",
+      "addNavLink": "[[LDocuments0002_addNavLink]]",
+      "description": "[[LDocuments0002_description]]",
+      "identity": "LDocuments0002",
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{08d89a66-4634-42b8-9d5a-0c27395a48b3}\" Type=\"Text\" Name=\"TriggerFlowInfo\" DisplayName=\"Trigger Flow Info\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnlyEnforced=\"FALSE\" ReadOnly=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"TriggerFlowInfo\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{321bc046-2178-49bd-893f-7aa4fd61d04e}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"PolicyDisabledUICapabilities\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Actions Disabled by Policy\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PolicyDisabledUICapabilities\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern /></Field>"
+        },
+        {
+          "verb": "addContentType",
+          "name": "Folder",
+          "id": "0x0120"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Documents",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Modified",
+            "Editor"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true,
+          "replaceViewFields": true
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "[[LEvents0003_listName]]",
+      "templateType": 106,
+      "color": "[[LEvents0003_color]]",
+      "icon": "[[LEvents0003_icon]]",
+      "addNavLink": "[[LEvents0003_addNavLink]]",
+      "description": "[[LEvents0003_description]]",
+      "identity": "LEvents0003",
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{8137f7ad-9170-4c1d-a17b-4ca7f557bc88}\" Name=\"ParticipantsPicker\" DisplayName=\"Attendees\" Type=\"UserMulti\" List=\"UserInfo\" Mult=\"TRUE\" Required=\"FALSE\" ShowField=\"ImnName\" UserSelectionMode=\"PeopleAndGroups\" UserSelectionScope=\"0\" Sortable=\"FALSE\" Sealed=\"FALSE\" AllowDeletion=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"ParticipantsPicker\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{6df9bd52-550e-4a30-bc31-a4366832a87d}\" Name=\"Category\" DisplayName=\"Category\" Type=\"Choice\" Format=\"Dropdown\" FillInChoice=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Category\"><CHOICES><CHOICE>Meeting</CHOICE><CHOICE>Work hours</CHOICE><CHOICE>Business</CHOICE><CHOICE>Holiday</CHOICE><CHOICE>Get-together</CHOICE><CHOICE>Gifts</CHOICE><CHOICE>Birthday</CHOICE><CHOICE>Anniversary</CHOICE></CHOICES></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{a4e7b3e1-1b0a-4ffa-8426-c94d4cb8cc57}\" Name=\"Facilities\" DisplayName=\"Resources\" Type=\"Facilities\" Mult=\"TRUE\" ShowField=\"Title\" Sortable=\"FALSE\" CanToggleHidden=\"TRUE\" Sealed=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"Facilities\" />"
+        },
+        {
+          "verb": "addContentType",
+          "name": "Event",
+          "id": "0x0102"
+        },
+        {
+          "verb": "addSPView",
+          "name": "Calendar",
+          "viewFields": [
+            "EventDate",
+            "EndDate",
+            "fRecurrence",
+            "EventType",
+            "WorkspaceLink",
+            "Title",
+            "Location",
+            "Description",
+            "Workspace",
+            "MasterSeriesItemID",
+            "fAllDayEvent"
+          ],
+          "query": "<Where><DateRangesOverlap><FieldRef Name=\"EventDate\" /><FieldRef Name=\"EndDate\" /><FieldRef Name=\"RecurrenceID\" /><Value Type=\"DateTime\"><Month /></Value></DateRangesOverlap></Where>",
+          "rowLimit": 30,
+          "isPaged": false,
+          "makeDefault": true,
+          "replaceViewFields": true,
+          "viewDataXml": "<FieldRef Name=\"Title\" Type=\"CalendarMonthTitle\" /><FieldRef Name=\"Title\" Type=\"CalendarWeekTitle\" /><FieldRef Name=\"Location\" Type=\"CalendarWeekLocation\" /><FieldRef Name=\"Title\" Type=\"CalendarDayTitle\" /><FieldRef Name=\"Location\" Type=\"CalendarDayLocation\" />"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Events",
+          "viewFields": [
+            "fRecurrence",
+            "WorkspaceLink",
+            "LinkTitle",
+            "Location",
+            "EventDate",
+            "EndDate",
+            "fAllDayEvent"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"EventDate\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "replaceViewFields": true
+        },
+        {
+          "verb": "addSPView",
+          "name": "Current Events",
+          "viewFields": [
+            "fRecurrence",
+            "WorkspaceLink",
+            "LinkTitle",
+            "Location",
+            "EventDate",
+            "EndDate",
+            "fAllDayEvent"
+          ],
+          "query": "<Where><DateRangesOverlap><FieldRef Name=\"EventDate\" /><FieldRef Name=\"EndDate\" /><FieldRef Name=\"RecurrenceID\" /><Value Type=\"DateTime\"><Now /></Value></DateRangesOverlap></Where><OrderBy><FieldRef Name=\"EventDate\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "replaceViewFields": true
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "[[LFEMA_Funding_Documen0004_listName]]",
+      "templateType": 101,
+      "color": "[[LFEMA_Funding_Documen0004_color]]",
+      "icon": "[[LFEMA_Funding_Documen0004_icon]]",
+      "addNavLink": "[[LFEMA_Funding_Documen0004_addNavLink]]",
+      "description": "[[LFEMA_Funding_Documen0004_description]]",
+      "identity": "LFEMA_Funding_Documen0004",
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{08d89a66-4634-42b8-9d5a-0c27395a48b3}\" Type=\"Text\" Name=\"TriggerFlowInfo\" DisplayName=\"Trigger Flow Info\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnlyEnforced=\"FALSE\" ReadOnly=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"TriggerFlowInfo\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"TaxonomyFieldTypeMulti\" DisplayName=\"Image Tags\" ID=\"{5cf76f15-5ced-4ddc-b409-7134ff3c332f}\" Name=\"MediaServiceImageTags\" ShowField=\"Term1033\" StaticName=\"MediaServiceImageTags\" Group=\"_Hidden\" CustomFormatter=\"\" Description=\"Field created by MediaTA\" EnforceUniqueValues=\"FALSE\" Hidden=\"FALSE\" CanToggleHidden=\"TRUE\" Indexed=\"FALSE\" ReadOnly=\"FALSE\" Required=\"FALSE\" Mult=\"TRUE\" Sortable=\"FALSE\"><Customization><ArrayOfProperty><Property><Name>SspId</Name><Value xmlns:q1=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q1:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">f06a3332-b8bb-42dc-a8fa-5192d6c09d2f</Value></Property><Property><Name>GroupId</Name></Property><Property><Name>TermSetId</Name><Value xmlns:q2=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q2:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">09814cd3-568e-fe90-9814-8d621ff8fb84</Value></Property><Property><Name>AnchorId</Name><Value xmlns:q3=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q3:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">fba54fb3-c3e1-fe81-a776-ca4b69148c4d</Value></Property><Property><Name>UserCreated</Name><Value xmlns:q4=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q4:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>Open</Name><Value xmlns:q5=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q5:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">true</Value></Property><Property><Name>IsPathRendered</Name><Value xmlns:q7=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q7:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsKeyword</Name><Value xmlns:q8=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q8:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>TargetTemplate</Name></Property><Property><Name>CreateValuesInEditForm</Name><Value xmlns:q9=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q9:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsDocTagsEnabled</Name><Value xmlns:q10=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q10:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsEnhancedImageTaggingEnabled</Name><Value xmlns:q11=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q11:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>FilterAssemblyStrongName</Name><Value xmlns:q12=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q12:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value></Property><Property><Name>FilterClassName</Name><Value xmlns:q13=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q13:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value></Property><Property><Name>FilterMethodName</Name><Value xmlns:q14=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q14:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">GetFilteringHtml</Value></Property><Property><Name>FilterJavascriptProperty</Name><Value xmlns:q15=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q15:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">FilteringJavascript</Value></Property></ArrayOfProperty></Customization></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{321bc046-2178-49bd-893f-7aa4fd61d04e}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"PolicyDisabledUICapabilities\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Actions Disabled by Policy\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PolicyDisabledUICapabilities\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern /></Field>"
+        },
+        {
+          "verb": "addContentType",
+          "name": "Folder",
+          "id": "0x0120"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Documents",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Modified",
+            "Editor"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true,
+          "replaceViewFields": true
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "[[LInsurance_Loss_Estim0005_listName]]",
+      "templateType": 101,
+      "color": "[[LInsurance_Loss_Estim0005_color]]",
+      "icon": "[[LInsurance_Loss_Estim0005_icon]]",
+      "addNavLink": "[[LInsurance_Loss_Estim0005_addNavLink]]",
+      "description": "[[LInsurance_Loss_Estim0005_description]]",
+      "identity": "LInsurance_Loss_Estim0005",
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{08d89a66-4634-42b8-9d5a-0c27395a48b3}\" Type=\"Text\" Name=\"TriggerFlowInfo\" DisplayName=\"Trigger Flow Info\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnlyEnforced=\"FALSE\" ReadOnly=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"TriggerFlowInfo\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{321bc046-2178-49bd-893f-7aa4fd61d04e}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"PolicyDisabledUICapabilities\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Actions Disabled by Policy\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PolicyDisabledUICapabilities\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern /></Field>"
+        },
+        {
+          "verb": "addContentType",
+          "name": "Folder",
+          "id": "0x0120"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Documents",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Modified",
+            "Editor"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true,
+          "replaceViewFields": true
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "[[LInvoices0006_listName]]",
+      "templateType": 101,
+      "color": "[[LInvoices0006_color]]",
+      "icon": "[[LInvoices0006_icon]]",
+      "addNavLink": "[[LInvoices0006_addNavLink]]",
+      "description": "[[LInvoices0006_description]]",
+      "identity": "LInvoices0006",
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{08d89a66-4634-42b8-9d5a-0c27395a48b3}\" Type=\"Text\" Name=\"TriggerFlowInfo\" DisplayName=\"Trigger Flow Info\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnlyEnforced=\"FALSE\" ReadOnly=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"TriggerFlowInfo\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{321bc046-2178-49bd-893f-7aa4fd61d04e}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"PolicyDisabledUICapabilities\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Actions Disabled by Policy\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PolicyDisabledUICapabilities\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern /></Field>"
+        },
+        {
+          "verb": "addContentType",
+          "name": "Folder",
+          "id": "0x0120"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Documents",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Modified",
+            "Editor"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true,
+          "replaceViewFields": true
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "[[LQuotes_and_Supportin0007_listName]]",
+      "templateType": 101,
+      "color": "[[LQuotes_and_Supportin0007_color]]",
+      "icon": "[[LQuotes_and_Supportin0007_icon]]",
+      "addNavLink": "[[LQuotes_and_Supportin0007_addNavLink]]",
+      "description": "[[LQuotes_and_Supportin0007_description]]",
+      "identity": "LQuotes_and_Supportin0007",
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{08d89a66-4634-42b8-9d5a-0c27395a48b3}\" Type=\"Text\" Name=\"TriggerFlowInfo\" DisplayName=\"Trigger Flow Info\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnlyEnforced=\"FALSE\" ReadOnly=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"TriggerFlowInfo\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Name=\"SiteIdentifier\" FromBaseType=\"FALSE\" Type=\"Choice\" DisplayName=\"Site Identifier\" Description=\"Site name or identifier (e.g. CT01, NS12)\" Required=\"TRUE\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"Dropdown\" FillInChoice=\"TRUE\" ID=\"{7e3047be-710e-4ea6-a703-769204779a4c}\" StaticName=\"SiteIdentifier\" CustomFormatter=\"\"><CHOICES><CHOICE>CV-CT01</CHOICE><CHOICE>CV-CT02</CHOICE><CHOICE>CV-CT34</CHOICE><CHOICE>CV-CT56</CHOICE><CHOICE>CV-CT07</CHOICE><CHOICE>CV-CT08</CHOICE><CHOICE>CV-KK01</CHOICE><CHOICE>CV-KK02</CHOICE><CHOICE>CV-KK03</CHOICE><CHOICE>CV-KK04</CHOICE><CHOICE>CV-LMN</CHOICE><CHOICE>CV-LMS</CHOICE><CHOICE>CV-Monitoring Site</CHOICE><CHOICE>CV-NS01</CHOICE><CHOICE>CV-NS02</CHOICE><CHOICE>CV-NS03</CHOICE><CHOICE>CV-NS04</CHOICE><CHOICE>CV-NS05</CHOICE><CHOICE>CV-NS06</CHOICE><CHOICE>CV-NS07</CHOICE><CHOICE>CV-NS08</CHOICE><CHOICE>CV-NS09</CHOICE><CHOICE>CV-NS10</CHOICE><CHOICE>CV-NS11</CHOICE><CHOICE>CV-NS12</CHOICE><CHOICE>CV-NWSRS</CHOICE><CHOICE>CV-Water Quality</CHOICE><CHOICE>CV-Weather Station</CHOICE><CHOICE>CV-OTHER</CHOICE><CHOICE>HQ-HQ General</CHOICE><CHOICE>JI-Influent/Prelim/Primary</CHOICE><CHOICE>JI-Secondary</CHOICE><CHOICE>JI  Disinfection/Effluent</CHOICE><CHOICE>JI-Dewatering/Thickening</CHOICE><CHOICE>JI-Dryers/Recycle</CHOICE><CHOICE>JI-Milo/Silo</CHOICE><CHOICE>JI-Energy</CHOICE><CHOICE>JI-OTHER</CHOICE><CHOICE>SS-Influent/Primary</CHOICE><CHOICE>SS-Secondary</CHOICE><CHOICE>SS-Disinfection/Effluent</CHOICE><CHOICE>SS-Thickening/Dewatering</CHOICE><CHOICE>SS-Digesters</CHOICE><CHOICE>SS-Energy</CHOICE><CHOICE>SS-OTHER</CHOICE><CHOICE>WC-Watercourse General</CHOICE></CHOICES></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field CustomFormatter=\"{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;flex-wrap&quot;:&quot;wrap&quot;,&quot;display&quot;:&quot;flex&quot;},&quot;children&quot;:[{&quot;elmType&quot;:&quot;div&quot;,&quot;style&quot;:{&quot;box-sizing&quot;:&quot;border-box&quot;,&quot;padding&quot;:&quot;4px 8px 5px 8px&quot;,&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;display&quot;:&quot;flex&quot;,&quot;border-radius&quot;:&quot;16px&quot;,&quot;height&quot;:&quot;24px&quot;,&quot;align-items&quot;:&quot;center&quot;,&quot;white-space&quot;:&quot;nowrap&quot;,&quot;margin&quot;:&quot;4px 4px 4px 4px&quot;},&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Quote&quot;]},&quot;sp-field-fontSizeSmall&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Photo&quot;]},&quot;sp-field-fontSizeSmall&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Supporting Document&quot;]},&quot;sp-field-fontSizeSmall&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Other&quot;]},&quot;sp-field-fontSizeSmall&quot;,&quot;sp-field-borderAllRegular sp-field-borderAllSolid sp-css-borderColor-neutralSecondary&quot;]}]}]}]}]}},&quot;children&quot;:[{&quot;elmType&quot;:&quot;span&quot;,&quot;style&quot;:{&quot;overflow&quot;:&quot;hidden&quot;,&quot;text-overflow&quot;:&quot;ellipsis&quot;,&quot;padding&quot;:&quot;0 3px&quot;},&quot;txtContent&quot;:&quot;@currentField&quot;,&quot;attributes&quot;:{&quot;class&quot;:{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Quote&quot;]},&quot;sp-field-fontSizeSmall&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Photo&quot;]},&quot;sp-field-fontSizeSmall&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Supporting Document&quot;]},&quot;sp-field-fontSizeSmall&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;&quot;]},&quot;&quot;,{&quot;operator&quot;:&quot;:&quot;,&quot;operands&quot;:[{&quot;operator&quot;:&quot;==&quot;,&quot;operands&quot;:[&quot;@currentField&quot;,&quot;Other&quot;]},&quot;sp-field-fontSizeSmall&quot;,&quot;&quot;]}]}]}]}]}}}]}],&quot;templateId&quot;:&quot;BgColorChoicePill&quot;}\" DisplayName=\"Document Type\" FillInChoice=\"TRUE\" Format=\"Dropdown\" IsModern=\"TRUE\" Name=\"DocumentType\" Required=\"TRUE\" Title=\"Document Type\" Type=\"Choice\" ID=\"{01fc15d6-3b58-495c-9b00-59787c9ef9c1}\" StaticName=\"DocumentType\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\"><CHOICES><CHOICE>Photo</CHOICE><CHOICE>Quote</CHOICE><CHOICE>Supporting Document</CHOICE><CHOICE>Other</CHOICE></CHOICES></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field DisplayName=\"CustomID\" EnforceUniqueValues=\"FALSE\" Format=\"Dropdown\" Indexed=\"TRUE\" IsModern=\"TRUE\" MaxLength=\"255\" Name=\"CustomID\" Title=\"CustomID\" Type=\"Text\" ID=\"{a8428cc6-3f40-4d22-ac61-dd0c46bce802}\" StaticName=\"CustomID\" CustomFormatter=\"\" Required=\"FALSE\"><Default>99999999</Default></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field Type=\"TaxonomyFieldTypeMulti\" DisplayName=\"Image Tags\" ID=\"{5cf76f15-5ced-4ddc-b409-7134ff3c332f}\" Name=\"MediaServiceImageTags\" ShowField=\"Term1033\" StaticName=\"MediaServiceImageTags\" Group=\"_Hidden\" CustomFormatter=\"\" Description=\"Field created by MediaTA\" EnforceUniqueValues=\"FALSE\" Hidden=\"FALSE\" CanToggleHidden=\"TRUE\" Indexed=\"FALSE\" ReadOnly=\"FALSE\" Required=\"FALSE\" Mult=\"TRUE\" Sortable=\"FALSE\"><Customization><ArrayOfProperty><Property><Name>SspId</Name><Value xmlns:q1=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q1:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">f06a3332-b8bb-42dc-a8fa-5192d6c09d2f</Value></Property><Property><Name>GroupId</Name></Property><Property><Name>TermSetId</Name><Value xmlns:q2=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q2:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">09814cd3-568e-fe90-9814-8d621ff8fb84</Value></Property><Property><Name>AnchorId</Name><Value xmlns:q3=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q3:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">fba54fb3-c3e1-fe81-a776-ca4b69148c4d</Value></Property><Property><Name>UserCreated</Name><Value xmlns:q4=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q4:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>Open</Name><Value xmlns:q5=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q5:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">true</Value></Property><Property><Name>IsPathRendered</Name><Value xmlns:q7=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q7:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsKeyword</Name><Value xmlns:q8=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q8:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>TargetTemplate</Name></Property><Property><Name>CreateValuesInEditForm</Name><Value xmlns:q9=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q9:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsDocTagsEnabled</Name><Value xmlns:q10=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q10:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>IsEnhancedImageTaggingEnabled</Name><Value xmlns:q11=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q11:boolean\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">false</Value></Property><Property><Name>FilterAssemblyStrongName</Name><Value xmlns:q12=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q12:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Value></Property><Property><Name>FilterClassName</Name><Value xmlns:q13=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q13:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">Microsoft.SharePoint.Taxonomy.TaxonomyField</Value></Property><Property><Name>FilterMethodName</Name><Value xmlns:q14=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q14:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">GetFilteringHtml</Value></Property><Property><Name>FilterJavascriptProperty</Name><Value xmlns:q15=\"http://www.w3.org/2001/XMLSchema\" p4:type=\"q15:string\" xmlns:p4=\"http://www.w3.org/2001/XMLSchema-instance\">FilteringJavascript</Value></Property></ArrayOfProperty></Customization></Field>"
+        },
+        {
+          "verb": "addSPCalculatedFieldXml",
+          "schemaXml": "<Field Type=\"Calculated\" DisplayName=\"Missing Info\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"DateOnly\" LCID=\"1033\" ResultType=\"Boolean\" ReadOnly=\"TRUE\" ID=\"{cd7133bd-613e-4968-a393-7abb80b77408}\" StaticName=\"Missing_x0020_Info\" Name=\"Missing_x0020_Info\" CustomFormatter=\"\" Required=\"FALSE\"><Formula>=OR(ISBLANK(SiteIdentifier),ISBLANK(DocumentType))</Formula><FieldRefs><FieldRef Name=\"DocumentType\" /><FieldRef Name=\"SiteIdentifier\" /></FieldRefs></Field>"
+        },
+        {
+          "verb": "addSPCalculatedFieldXml",
+          "schemaXml": "<Field Type=\"Calculated\" DisplayName=\"File Identifier\" EnforceUniqueValues=\"FALSE\" Indexed=\"FALSE\" Format=\"DateOnly\" LCID=\"1033\" ResultType=\"Text\" ReadOnly=\"TRUE\" ID=\"{d5c34258-9688-4cb6-a82c-25669f201668}\" StaticName=\"File_x0020_Identifier\" Name=\"File_x0020_Identifier\" CustomFormatter=\"\" Required=\"FALSE\"><Formula>=IF(DocumentType=0,\"\",UPPER(SiteIdentifier)&amp;\"-\"&amp;UPPER(DocumentType)&amp;\"-\"&amp;CustomID)</Formula><FieldRefs><FieldRef Name=\"CustomID\" /><FieldRef Name=\"SiteIdentifier\" /><FieldRef Name=\"DocumentType\" /></FieldRefs></Field>"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{321bc046-2178-49bd-893f-7aa4fd61d04e}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"PolicyDisabledUICapabilities\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Actions Disabled by Policy\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PolicyDisabledUICapabilities\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern /></Field>"
+        },
+        {
+          "verb": "addContentType",
+          "name": "Folder",
+          "id": "0x0120"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Documents",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "File_x0020_Identifier",
+            "SiteIdentifier",
+            "DocumentType",
+            "Modified",
+            "Editor",
+            "Created",
+            "Author"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true,
+          "replaceViewFields": true
+        },
+        {
+          "verb": "addSPView",
+          "name": "Document View",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "File_x0020_Identifier",
+            "SiteIdentifier",
+            "DocumentType",
+            "Modified",
+            "Editor",
+            "ID",
+            "Missing_x0020_Info"
+          ],
+          "query": "",
+          "rowLimit": 30,
+          "isPaged": true,
+          "scope": "Recursive",
+          "replaceViewFields": true,
+          "calendarViewStylesXml": "<CalendarViewStyle Title=\"Day\" Type=\"day\" Template=\"CalendarViewdayChrome\" Sequence=\"1\" Default=\"FALSE\" /><CalendarViewStyle Title=\"Week\" Type=\"week\" Template=\"CalendarViewweekChrome\" Sequence=\"2\" Default=\"FALSE\" /><CalendarViewStyle Title=\"Month\" Type=\"month\" Template=\"CalendarViewmonthChrome\" Sequence=\"3\" Default=\"FALSE\" /><CalendarViewStyle Title=\"Work week\" Type=\"workweek\" Template=\"CalendarViewweekChrome\" Sequence=\"4\" Default=\"FALSE\" />"
+        },
+        {
+          "verb": "addSPView",
+          "name": "My Files: Missing Required Information",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Created",
+            "Editor",
+            "Modified",
+            "SiteIdentifier",
+            "DocumentType",
+            "FileDirRef"
+          ],
+          "query": "<Where><And><Eq><FieldRef Name=\"Author\" /><Value Type=\"Integer\"><UserID /></Value></Eq><Eq><FieldRef Name=\"Missing_x0020_Info\" /><Value Type=\"Boolean\">1</Value></Eq></And></Where>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "scope": "Recursive",
+          "replaceViewFields": true,
+          "columnWidthXml": "<FieldRef Name=\"Created\" width=\"209.6666259765625\" /><FieldRef Name=\"Document Type\" width=\"253.6666259765625\" /><FieldRef Name=\"Site Identifier\" width=\"261.6666259765625\" /><FieldRef Name=\"Path\" width=\"481.375\" />"
+        }
+      ]
+    },
+    {
+      "verb": "createSPList",
+      "listName": "[[LRisk_Management_Refe0008_listName]]",
+      "templateType": 101,
+      "color": "[[LRisk_Management_Refe0008_color]]",
+      "icon": "[[LRisk_Management_Refe0008_icon]]",
+      "addNavLink": "[[LRisk_Management_Refe0008_addNavLink]]",
+      "description": "[[LRisk_Management_Refe0008_description]]",
+      "identity": "LRisk_Management_Refe0008",
+      "subactions": [
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{08d89a66-4634-42b8-9d5a-0c27395a48b3}\" Type=\"Text\" Name=\"TriggerFlowInfo\" DisplayName=\"Trigger Flow Info\" DisplaceOnUpgrade=\"TRUE\" Hidden=\"TRUE\" ReadOnlyEnforced=\"FALSE\" ReadOnly=\"TRUE\" Required=\"FALSE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"TriggerFlowInfo\" />"
+        },
+        {
+          "verb": "addSPFieldXml",
+          "schemaXml": "<Field ID=\"{321bc046-2178-49bd-893f-7aa4fd61d04e}\" ReadOnly=\"TRUE\" Type=\"Computed\" Name=\"PolicyDisabledUICapabilities\" DisplaceOnUpgrade=\"TRUE\" DisplayName=\"Actions Disabled by Policy\" Filterable=\"FALSE\" Sortable=\"FALSE\" Hidden=\"TRUE\" SourceID=\"http://schemas.microsoft.com/sharepoint/v3\" StaticName=\"PolicyDisabledUICapabilities\"><FieldRefs><FieldRef Name=\"FSObjType\" Key=\"Primary\" /><FieldRef Name=\"ID\" /></FieldRefs><DisplayPattern /></Field>"
+        },
+        {
+          "verb": "addContentType",
+          "name": "Folder",
+          "id": "0x0120"
+        },
+        {
+          "verb": "addSPView",
+          "name": "All Documents",
+          "viewFields": [
+            "DocIcon",
+            "LinkFilename",
+            "Modified",
+            "Editor"
+          ],
+          "query": "<OrderBy><FieldRef Name=\"FileLeafRef\" /></OrderBy>",
+          "rowLimit": 30,
+          "isPaged": true,
+          "makeDefault": true,
+          "replaceViewFields": true
+        }
+      ]
+    },
+    {
+      "verb": "setSiteBranding",
+      "navigationLayout": "Cascade",
+      "headerLayout": "Compact",
+      "headerBackground": "Soft",
+      "headerColorIndex": 2,
+      "showFooter": true,
+      "footerColorIndex": -1
+    },
+    {
+      "verb": "applyTheme",
+      "themeJson": {
+        "version": "2",
+        "isInverted": false,
+        "palette": {
+          "themePrimary": "#ff1b72a8",
+          "themeLighterAlt": "#fff3f8fc",
+          "themeLighter": "#ffd1e5f1",
+          "themeLight": "#ffabcfe5",
+          "themeTertiary": "#ff65a4cb",
+          "themeSecondary": "#ff2f80b3",
+          "themeDarkAlt": "#ff186797",
+          "themeDark": "#ff145780",
+          "themeDarker": "#ff0f405e",
+          "black": "#ff000000",
+          "neutralDark": "#ff201f1e",
+          "neutralPrimary": "#ff323130",
+          "neutralPrimaryAlt": "#ff3b3a39",
+          "neutralSecondary": "#ff605e5c",
+          "neutralTertiary": "#ffa19f9d",
+          "neutralTertiaryAlt": "#ffc8c8c8",
+          "neutralLight": "#ffeaeaea",
+          "neutralLighter": "#fff4f4f4",
+          "neutralLighterAlt": "#fff8f8f8",
+          "white": "#ffffffff",
+          "neutralQuaternaryAlt": "#ffdadada",
+          "neutralQuaternary": "#ffd0d0d0",
+          "HyperlinkActive": "#ff0f405e",
+          "CommandLinksPressed": "#ff0f405e",
+          "NavigationPressed": "#ff0f405e",
+          "EmphasisHoverBorder": "#ff0f405e",
+          "TopBarPressedText": "#ff0f405e",
+          "HeaderNavigationPressedText": "#ff0f405e",
+          "Hyperlinkfollowed": "#ff0f405e",
+          "EmphasisHoverBackground": "#ff145780",
+          "EmphasisBorder": "#ff145780",
+          "AccentText": "#ff1b72a8",
+          "CommandLinksHover": "#ff1b72a8",
+          "RowAccent": "#ff1b72a8",
+          "NavigationAccent": "#ff1b72a8",
+          "NavigationHover": "#ff1b72a8",
+          "EmphasisBackground": "#ff1b72a8",
+          "HeaderNavigationHoverText": "#ff1b72a8",
+          "HeaderNavigationSelectedText": "#ff1b72a8",
+          "SuiteBarBackground": "#ff1b72a8",
+          "Hyperlink": "#ff1b72a8",
+          "ContentAccent1": "#ff1b72a8",
+          "AccentLines": "#ff2f80b3",
+          "HeaderAccentLines": "#ff2f80b3",
+          "ButtonPressedBorder": "#ff2f80b3",
+          "SuiteBarHoverBackground": "#ff65a4cb",
+          "StrongLines": "#ffabcfe5",
+          "HeaderStrongLines": "#ffabcfe5",
+          "SuiteBarHoverText": "#ffabcfe5",
+          "ButtonPressedBackground": "#ffabcfe5",
+          "ButtonHoverBorder": "#ffabcfe5",
+          "ButtonHoverBackground": "#ffd1e5f1",
+          "SelectionBackground": "#80abcfe5",
+          "HoverBackground": "#80d1e5f1",
+          "NavigationHoverBackground": "#80d1e5f1",
+          "PageBackground": "#ffffffff",
+          "EmphasisText": "#ffffffff",
+          "SuiteBarText": "#ffffffff",
+          "TileText": "#ffffffff",
+          "BackgroundOverlay": "#d9ffffff",
+          "HeaderBackground": "#d9ffffff",
+          "FooterBackground": "#d9ffffff",
+          "DisabledBackground": "#fff8f8f8",
+          "HeaderDisabledBackground": "#fff8f8f8",
+          "ButtonBackground": "#fff8f8f8",
+          "ButtonDisabledBackground": "#fff8f8f8",
+          "SubtleEmphasisBackground": "#fff4f4f4",
+          "DialogBorder": "#fff4f4f4",
+          "NavigationSelectedBackground": "#c7eaeaea",
+          "TopBarBackground": "#c7eaeaea",
+          "DisabledLines": "#ffeaeaea",
+          "HeaderDisabledLines": "#ffeaeaea",
+          "ButtonDisabledBorder": "#ffeaeaea",
+          "SuiteBarDisabledText": "#ffeaeaea",
+          "SubtleLines": "#ffc8c8c8",
+          "HeaderSubtleLines": "#ffc8c8c8",
+          "ButtonGlyphDisabled": "#ffc8c8c8",
+          "DisabledText": "#ffa19f9d",
+          "CommandLinksDisabled": "#ffa19f9d",
+          "HeaderDisableText": "#ffa19f9d",
+          "ButtonDisabledText": "#ffa19f9d",
+          "Lines": "#ffa19f9d",
+          "HeaderLines": "#ffa19f9d",
+          "ButtonBorder": "#ffa19f9d",
+          "CommandLinks": "#ff605e5c",
+          "Navigation": "#ff605e5c",
+          "SubtleEmphasisText": "#ff605e5c",
+          "TopBarText": "#ff605e5c",
+          "HeaderNavigationText": "#ff605e5c",
+          "ButtonGlyph": "#ff605e5c",
+          "BodyText": "#ff323130",
+          "WebPartHeading": "#ff323130",
+          "HeaderText": "#ff323130",
+          "ButtonText": "#ff323130",
+          "ButtonGlyphActive": "#ff323130",
+          "TopBarHoverText": "#ff323130",
+          "StrongBodyText": "#ff201f1e",
+          "SiteTitle": "#ff201f1e",
+          "CommandLinksSecondary": "#ff201f1e",
+          "SubtleEmphasisCommandLinks": "#ff201f1e",
+          "HeaderSiteTitle": "#ff201f1e",
+          "TileBackgroundOverlay": "#80000000",
+          "ContentAccent2": "#ff00485b",
+          "ContentAccent3": "#ff288054",
+          "ContentAccent4": "#ff767956",
+          "ContentAccent5": "#ffed0033",
+          "ContentAccent6": "#ff682a7a",
+          "backgroundOverlay": "#d9ffffff",
+          "whiteTranslucent40": "#66ffffff",
+          "themeAccent": "#ff1b72a8",
+          "themeAccentTranslucent10": "#1a1b72a8",
+          "primaryBackground": "#ffffffff",
+          "primaryText": "#ff333333",
+          "suiteBarBackground": "#ff1b72a8",
+          "suiteBarText": "#ffffffff",
+          "suiteBarDisabledText": "#ffeaeaea",
+          "topBarBackground": "#c7eaeaea",
+          "topBarText": "#ff605e5c",
+          "topBarHoverText": "#ff323130",
+          "dialogBorder": "#fff4f4f4",
+          "backgroundColor": "#ffffffff"
+        },
+        "otherMode": null,
+        "secondaryColors": {
+          "light": [
+            {
+              "themePrimary": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 27,
+                  "G": 114,
+                  "B": 168
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 27,
+                    "G": 114,
+                    "B": 168
+                  },
+                  {
+                    "A": 255,
+                    "R": 200,
+                    "G": 228,
+                    "B": 246
+                  },
+                  {
+                    "A": 255,
+                    "R": 146,
+                    "G": 202,
+                    "B": 237
+                  },
+                  {
+                    "A": 255,
+                    "R": 92,
+                    "G": 176,
+                    "B": 228
+                  },
+                  {
+                    "A": 255,
+                    "R": 20,
+                    "G": 85,
+                    "B": 126
+                  },
+                  {
+                    "A": 255,
+                    "R": 13,
+                    "G": 57,
+                    "B": 84
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 240,
+                  "G": 240,
+                  "B": 240
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 240,
+                    "G": 240,
+                    "B": 240
+                  },
+                  {
+                    "A": 255,
+                    "R": 216,
+                    "G": 216,
+                    "B": 216
+                  },
+                  {
+                    "A": 255,
+                    "R": 180,
+                    "G": 180,
+                    "B": 180
+                  },
+                  {
+                    "A": 255,
+                    "R": 120,
+                    "G": 120,
+                    "B": 120
+                  },
+                  {
+                    "A": 255,
+                    "R": 60,
+                    "G": 60,
+                    "B": 60
+                  },
+                  {
+                    "A": 255,
+                    "R": 24,
+                    "G": 24,
+                    "B": 24
+                  }
+                ]
+              }
+            },
+            {
+              "themePrimary": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 255,
+                  "G": 255,
+                  "B": 255
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 255,
+                    "G": 255,
+                    "B": 255
+                  },
+                  {
+                    "A": 255,
+                    "R": 242,
+                    "G": 242,
+                    "B": 242
+                  },
+                  {
+                    "A": 255,
+                    "R": 216,
+                    "G": 216,
+                    "B": 216
+                  },
+                  {
+                    "A": 255,
+                    "R": 191,
+                    "G": 191,
+                    "B": 191
+                  },
+                  {
+                    "A": 255,
+                    "R": 165,
+                    "G": 165,
+                    "B": 165
+                  },
+                  {
+                    "A": 255,
+                    "R": 127,
+                    "G": 127,
+                    "B": 127
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 27,
+                  "G": 114,
+                  "B": 168
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 27,
+                    "G": 114,
+                    "B": 168
+                  },
+                  {
+                    "A": 255,
+                    "R": 200,
+                    "G": 228,
+                    "B": 246
+                  },
+                  {
+                    "A": 255,
+                    "R": 146,
+                    "G": 202,
+                    "B": 237
+                  },
+                  {
+                    "A": 255,
+                    "R": 92,
+                    "G": 176,
+                    "B": 228
+                  },
+                  {
+                    "A": 255,
+                    "R": 20,
+                    "G": 85,
+                    "B": 126
+                  },
+                  {
+                    "A": 255,
+                    "R": 13,
+                    "G": 57,
+                    "B": 84
+                  }
+                ]
+              }
+            },
+            {
+              "themePrimary": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 240,
+                  "G": 240,
+                  "B": 240
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 240,
+                    "G": 240,
+                    "B": 240
+                  },
+                  {
+                    "A": 255,
+                    "R": 216,
+                    "G": 216,
+                    "B": 216
+                  },
+                  {
+                    "A": 255,
+                    "R": 180,
+                    "G": 180,
+                    "B": 180
+                  },
+                  {
+                    "A": 255,
+                    "R": 120,
+                    "G": 120,
+                    "B": 120
+                  },
+                  {
+                    "A": 255,
+                    "R": 60,
+                    "G": 60,
+                    "B": 60
+                  },
+                  {
+                    "A": 255,
+                    "R": 24,
+                    "G": 24,
+                    "B": 24
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 57,
+                  "G": 76,
+                  "B": 87
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 57,
+                    "G": 76,
+                    "B": 87
+                  },
+                  {
+                    "A": 255,
+                    "R": 210,
+                    "G": 220,
+                    "B": 226
+                  },
+                  {
+                    "A": 255,
+                    "R": 166,
+                    "G": 185,
+                    "B": 197
+                  },
+                  {
+                    "A": 255,
+                    "R": 122,
+                    "G": 151,
+                    "B": 168
+                  },
+                  {
+                    "A": 255,
+                    "R": 42,
+                    "G": 57,
+                    "B": 65
+                  },
+                  {
+                    "A": 255,
+                    "R": 28,
+                    "G": 38,
+                    "B": 43
+                  }
+                ]
+              }
+            },
+            {
+              "themePrimary": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 57,
+                  "G": 76,
+                  "B": 87
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 57,
+                    "G": 76,
+                    "B": 87
+                  },
+                  {
+                    "A": 255,
+                    "R": 210,
+                    "G": 220,
+                    "B": 226
+                  },
+                  {
+                    "A": 255,
+                    "R": 166,
+                    "G": 185,
+                    "B": 197
+                  },
+                  {
+                    "A": 255,
+                    "R": 122,
+                    "G": 151,
+                    "B": 168
+                  },
+                  {
+                    "A": 255,
+                    "R": 42,
+                    "G": 57,
+                    "B": 65
+                  },
+                  {
+                    "A": 255,
+                    "R": 28,
+                    "G": 38,
+                    "B": 43
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 255,
+                  "G": 255,
+                  "B": 255
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 255,
+                    "G": 255,
+                    "B": 255
+                  },
+                  {
+                    "A": 255,
+                    "R": 242,
+                    "G": 242,
+                    "B": 242
+                  },
+                  {
+                    "A": 255,
+                    "R": 216,
+                    "G": 216,
+                    "B": 216
+                  },
+                  {
+                    "A": 255,
+                    "R": 191,
+                    "G": 191,
+                    "B": 191
+                  },
+                  {
+                    "A": 255,
+                    "R": 165,
+                    "G": 165,
+                    "B": 165
+                  },
+                  {
+                    "A": 255,
+                    "R": 127,
+                    "G": 127,
+                    "B": 127
+                  }
+                ]
+              }
+            },
+            {
+              "themePrimary": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 255,
+                  "G": 255,
+                  "B": 255
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 255,
+                    "G": 255,
+                    "B": 255
+                  },
+                  {
+                    "A": 255,
+                    "R": 242,
+                    "G": 242,
+                    "B": 242
+                  },
+                  {
+                    "A": 255,
+                    "R": 216,
+                    "G": 216,
+                    "B": 216
+                  },
+                  {
+                    "A": 255,
+                    "R": 191,
+                    "G": 191,
+                    "B": 191
+                  },
+                  {
+                    "A": 255,
+                    "R": 165,
+                    "G": 165,
+                    "B": 165
+                  },
+                  {
+                    "A": 255,
+                    "R": 127,
+                    "G": 127,
+                    "B": 127
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 57,
+                  "G": 76,
+                  "B": 87
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 57,
+                    "G": 76,
+                    "B": 87
+                  },
+                  {
+                    "A": 255,
+                    "R": 210,
+                    "G": 220,
+                    "B": 226
+                  },
+                  {
+                    "A": 255,
+                    "R": 166,
+                    "G": 185,
+                    "B": 197
+                  },
+                  {
+                    "A": 255,
+                    "R": 122,
+                    "G": 151,
+                    "B": 168
+                  },
+                  {
+                    "A": 255,
+                    "R": 42,
+                    "G": 57,
+                    "B": 65
+                  },
+                  {
+                    "A": 255,
+                    "R": 28,
+                    "G": 38,
+                    "B": 43
+                  }
+                ]
+              }
+            },
+            {
+              "themePrimary": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 105,
+                  "G": 121,
+                  "B": 126
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 105,
+                    "G": 121,
+                    "B": 126
+                  },
+                  {
+                    "A": 255,
+                    "R": 224,
+                    "G": 228,
+                    "B": 229
+                  },
+                  {
+                    "A": 255,
+                    "R": 194,
+                    "G": 201,
+                    "B": 204
+                  },
+                  {
+                    "A": 255,
+                    "R": 163,
+                    "G": 175,
+                    "B": 178
+                  },
+                  {
+                    "A": 255,
+                    "R": 78,
+                    "G": 90,
+                    "B": 94
+                  },
+                  {
+                    "A": 255,
+                    "R": 52,
+                    "G": 60,
+                    "B": 63
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 255,
+                  "G": 255,
+                  "B": 255
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 255,
+                    "G": 255,
+                    "B": 255
+                  },
+                  {
+                    "A": 255,
+                    "R": 242,
+                    "G": 242,
+                    "B": 242
+                  },
+                  {
+                    "A": 255,
+                    "R": 216,
+                    "G": 216,
+                    "B": 216
+                  },
+                  {
+                    "A": 255,
+                    "R": 191,
+                    "G": 191,
+                    "B": 191
+                  },
+                  {
+                    "A": 255,
+                    "R": 165,
+                    "G": 165,
+                    "B": 165
+                  },
+                  {
+                    "A": 255,
+                    "R": 127,
+                    "G": 127,
+                    "B": 127
+                  }
+                ]
+              }
+            },
+            {
+              "themePrimary": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 255,
+                  "G": 255,
+                  "B": 255
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 255,
+                    "G": 255,
+                    "B": 255
+                  },
+                  {
+                    "A": 255,
+                    "R": 242,
+                    "G": 242,
+                    "B": 242
+                  },
+                  {
+                    "A": 255,
+                    "R": 216,
+                    "G": 216,
+                    "B": 216
+                  },
+                  {
+                    "A": 255,
+                    "R": 191,
+                    "G": 191,
+                    "B": 191
+                  },
+                  {
+                    "A": 255,
+                    "R": 165,
+                    "G": 165,
+                    "B": 165
+                  },
+                  {
+                    "A": 255,
+                    "R": 127,
+                    "G": 127,
+                    "B": 127
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 105,
+                  "G": 121,
+                  "B": 126
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 105,
+                    "G": 121,
+                    "B": 126
+                  },
+                  {
+                    "A": 255,
+                    "R": 224,
+                    "G": 228,
+                    "B": 229
+                  },
+                  {
+                    "A": 255,
+                    "R": 194,
+                    "G": 201,
+                    "B": 204
+                  },
+                  {
+                    "A": 255,
+                    "R": 163,
+                    "G": 175,
+                    "B": 178
+                  },
+                  {
+                    "A": 255,
+                    "R": 78,
+                    "G": 90,
+                    "B": 94
+                  },
+                  {
+                    "A": 255,
+                    "R": 52,
+                    "G": 60,
+                    "B": 63
+                  }
+                ]
+              }
+            },
+            {
+              "themePrimary": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 240,
+                  "G": 240,
+                  "B": 240
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 240,
+                    "G": 240,
+                    "B": 240
+                  },
+                  {
+                    "A": 255,
+                    "R": 216,
+                    "G": 216,
+                    "B": 216
+                  },
+                  {
+                    "A": 255,
+                    "R": 180,
+                    "G": 180,
+                    "B": 180
+                  },
+                  {
+                    "A": 255,
+                    "R": 120,
+                    "G": 120,
+                    "B": 120
+                  },
+                  {
+                    "A": 255,
+                    "R": 60,
+                    "G": 60,
+                    "B": 60
+                  },
+                  {
+                    "A": 255,
+                    "R": 24,
+                    "G": 24,
+                    "B": 24
+                  }
+                ]
+              },
+              "backgroundColor": {
+                "DefaultColor": {
+                  "A": 255,
+                  "R": 105,
+                  "G": 121,
+                  "B": 126
+                },
+                "Shades": [
+                  {
+                    "A": 255,
+                    "R": 105,
+                    "G": 121,
+                    "B": 126
+                  },
+                  {
+                    "A": 255,
+                    "R": 224,
+                    "G": 228,
+                    "B": 229
+                  },
+                  {
+                    "A": 255,
+                    "R": 194,
+                    "G": 201,
+                    "B": 204
+                  },
+                  {
+                    "A": 255,
+                    "R": 163,
+                    "G": 175,
+                    "B": 178
+                  },
+                  {
+                    "A": 255,
+                    "R": 78,
+                    "G": 90,
+                    "B": 94
+                  },
+                  {
+                    "A": 255,
+                    "R": 52,
+                    "G": 60,
+                    "B": 63
+                  }
+                ]
+              }
+            }
+          ],
+          "dark": []
+        },
+        "displayMode": "light",
+        "ThemeSchemaVersion": "2.0.0"
+      }
+    },
+    {
+      "verb": "setSiteExternalSharingCapability",
+      "capability": "ExistingExternalUserSharingOnly"
+    },
+    {
+      "verb": "setRegionalSettings",
+      "timeZone": 11,
+      "locale": 1033,
+      "sortOrder": 25,
+      "hourFormat": "12"
+    }
+  ],
+  "bindings": {
+    "LBrown_Brown_External0001_listName": {
+      "source": "Input",
+      "defaultValue": "Brown & Brown (External Access)"
+    },
+    "LBrown_Brown_External0001_icon": {
+      "source": "Input",
+      "defaultValue": "8"
+    },
+    "LBrown_Brown_External0001_description": {
+      "source": "Input",
+      "defaultValue": "Document library to share documentation with external guests."
+    },
+    "LBrown_Brown_External0001_color": {
+      "source": "Input",
+      "defaultValue": "5"
+    },
+    "LBrown_Brown_External0001_addNavLink": {
+      "source": "Input",
+      "defaultValue": "true"
+    },
+    "LDocuments0002_listName": {
+      "source": "Input",
+      "defaultValue": "Documents"
+    },
+    "LDocuments0002_icon": {
+      "source": "Input",
+      "defaultValue": "0"
+    },
+    "LDocuments0002_description": {
+      "source": "Input",
+      "defaultValue": ""
+    },
+    "LDocuments0002_color": {
+      "source": "Input",
+      "defaultValue": "0"
+    },
+    "LDocuments0002_addNavLink": {
+      "source": "Input",
+      "defaultValue": "false"
+    },
+    "LEvents0003_listName": {
+      "source": "Input",
+      "defaultValue": "Events"
+    },
+    "LEvents0003_icon": {
+      "source": "Input",
+      "defaultValue": "0"
+    },
+    "LEvents0003_description": {
+      "source": "Input",
+      "defaultValue": ""
+    },
+    "LEvents0003_color": {
+      "source": "Input",
+      "defaultValue": "0"
+    },
+    "LEvents0003_addNavLink": {
+      "source": "Input",
+      "defaultValue": "false"
+    },
+    "LFEMA_Funding_Documen0004_listName": {
+      "source": "Input",
+      "defaultValue": "FEMA Funding Documents"
+    },
+    "LFEMA_Funding_Documen0004_icon": {
+      "source": "Input",
+      "defaultValue": "5"
+    },
+    "LFEMA_Funding_Documen0004_description": {
+      "source": "Input",
+      "defaultValue": ""
+    },
+    "LFEMA_Funding_Documen0004_color": {
+      "source": "Input",
+      "defaultValue": "10"
+    },
+    "LFEMA_Funding_Documen0004_addNavLink": {
+      "source": "Input",
+      "defaultValue": "true"
+    },
+    "LInsurance_Loss_Estim0005_listName": {
+      "source": "Input",
+      "defaultValue": "Insurance Loss Estimates"
+    },
+    "LInsurance_Loss_Estim0005_icon": {
+      "source": "Input",
+      "defaultValue": "11"
+    },
+    "LInsurance_Loss_Estim0005_description": {
+      "source": "Input",
+      "defaultValue": "Document library of links to divisional insurance loss estimates."
+    },
+    "LInsurance_Loss_Estim0005_color": {
+      "source": "Input",
+      "defaultValue": "11"
+    },
+    "LInsurance_Loss_Estim0005_addNavLink": {
+      "source": "Input",
+      "defaultValue": "true"
+    },
+    "LInvoices0006_listName": {
+      "source": "Input",
+      "defaultValue": "Invoices"
+    },
+    "LInvoices0006_icon": {
+      "source": "Input",
+      "defaultValue": "5"
+    },
+    "LInvoices0006_description": {
+      "source": "Input",
+      "defaultValue": "Library for AP to upload invoices associated with 2025 Flood Damage Event projects"
+    },
+    "LInvoices0006_color": {
+      "source": "Input",
+      "defaultValue": "7"
+    },
+    "LInvoices0006_addNavLink": {
+      "source": "Input",
+      "defaultValue": "false"
+    },
+    "LQuotes_and_Supportin0007_listName": {
+      "source": "Input",
+      "defaultValue": "Quotes and Supporting Documentation"
+    },
+    "LQuotes_and_Supportin0007_icon": {
+      "source": "Input",
+      "defaultValue": "5"
+    },
+    "LQuotes_and_Supportin0007_description": {
+      "source": "Input",
+      "defaultValue": "Document library used to store quotes and supporting documentation such as photos for the 2025 Flood Damage Event."
+    },
+    "LQuotes_and_Supportin0007_color": {
+      "source": "Input",
+      "defaultValue": "9"
+    },
+    "LQuotes_and_Supportin0007_addNavLink": {
+      "source": "Input",
+      "defaultValue": "false"
+    },
+    "LRisk_Management_Refe0008_listName": {
+      "source": "Input",
+      "defaultValue": "Risk Management References (Restricted)"
+    },
+    "LRisk_Management_Refe0008_icon": {
+      "source": "Input",
+      "defaultValue": "8"
+    },
+    "LRisk_Management_Refe0008_description": {
+      "source": "Input",
+      "defaultValue": "Collection of links and references for Risk Management."
+    },
+    "LRisk_Management_Refe0008_color": {
+      "source": "Input",
+      "defaultValue": "11"
+    },
+    "LRisk_Management_Refe0008_addNavLink": {
+      "source": "Input",
+      "defaultValue": "true"
+    }
+  }
+}
